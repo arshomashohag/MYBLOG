@@ -7,6 +7,13 @@ Shohag's Blog
 @endsection
 
 
+@section('styles')
+	<link rel="stylesheet" type="text/css" href="{{ URL::to('css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{URL::to('css/footer-distributed.css')}}">
+@endsection
+
+
+
 @section('content')
   
 
@@ -65,16 +72,40 @@ Shohag's Blog
 	
 
 		   		   		<section class="add_blog">
+		   		   		 	
+		   		   		 		@if(count($errors)>0)
+			   		   		 		<div class="alert alert-danger" role="alert">
+
+			   		   		 			@foreach($errors->all() as $error)
+				   		   		 			<ul>
+				   		   		 				<li>
+				   		   		 					{{ $error }}
+				   		   		 				</li>												
+											</ul>
+			   		   		 			@endforeach
+
+			   		   		 		</div>
+		   		   		 		@endif
+
+								@if(Session::has('success'))
+			   		   		 		 
+			   		   		 			 {{ Session::get('success') }}
+				   		   		 			 
+			   		   		 		</div>
+		   		   		 		@endif
+
+		   		   		 	
 							<h3>Add Blog</h3>
-							<form>
+							<form action="{{route('create')}}" method="post">
 								<label for="name" class="label label-info">Your Name</label>
 								<input type="text" name="author" class="form-control" id="name" placeholder="Name">
  								<label for="blog_title" class="label label-info">Title</label>
  								<input type="text" name="title" class="form-control" id="blog_title" placeholder="Title of the blog">
 
 								<label for="blog" class="label label-info">Blog</label>
-								<textarea class="blog_text form-control" rows="5" placeholder="Quote"></textarea><br>
-								<button type="submit" class="btn btn-primary">Submit</button>  
+								<textarea name="blog" class="blog_text form-control" rows="5" placeholder="Quote" ></textarea>
+								<button type="submit" class="btn btn-primary">Submit</button><br>  
+								<input type="hidden" name="_token" value="{{ Session::token()}}"> 
 							</form>
 		   		   		</section>
 		   		   	</div>

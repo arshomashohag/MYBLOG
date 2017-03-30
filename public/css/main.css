@@ -6,3 +6,9 @@
     float:right;
     margin-top:15px;
 }
+
+.delete-info{
+	position: absolute;
+	top: 2px;
+	right: 5px;
+}

@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::group(['middleware'=>['web']], function(){
+
+	Route::get('/', [
+      'uses'=>'QuoteController@getIndex',
+      'as'=>'home'
+	]);
+
+    Route::post('/newblog', [
+       'uses'=>'QuoteController@postQuote',
+       'as' =>'create'
+    ]);
+
 });
+
