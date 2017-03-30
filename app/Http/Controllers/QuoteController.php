@@ -15,7 +15,7 @@ class QuoteController extends Controller{
 	public function getIndex(){
 
      	$quotes = Quote::all();
-     	
+
 		return view('index', ['quotes'=>$quotes]);
 	}
 
@@ -56,6 +56,21 @@ class QuoteController extends Controller{
 
 
      	
+	}
+
+
+
+	public function deleteBlog($quote_id){
+      	
+      	$quote = Quote::find($quote_id);
+
+      	if( count($quote->author->quotes) ===1){
+      		$quote->author->delete();
+      	}
+
+      	$quote->delete();
+
+      	return redirect()->route('home')->with(['success'=>'Blog deleted successfully !!']);
 	}
 }
 

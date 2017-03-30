@@ -15,7 +15,35 @@ Shohag's Blog
 
 
 @section('content')
-  
+
+
+ 	 
+ 		@if(count($errors)>0)
+ 		    <div class="container">
+ 		 		<div class="alert alert-danger" role="alert">
+
+ 		 			@foreach($errors->all() as $error)
+ 		 				<ul>
+ 		 				    <li>
+ 		 				   		{{ $error }}
+ 		 				   	</li>												
+ 		 				</ul>
+ 		 			@endforeach
+
+ 		 		</div>
+ 		 	</div>
+ 		@endif
+
+ 		@if(Session::has('success'))
+ 		   <div class="container">
+ 				<div class="alert alert-success" role="alert">	   		   		 		 
+ 		            {{ Session::get('success') }}
+ 		 				   		   		 			 
+ 		 	    </div>
+ 		    </div>
+ 		@endif
+ 		    
+
 
   <div class="container">
 	   <div class="row">
@@ -33,6 +61,7 @@ Shohag's Blog
 	   					     <div class="panel panel-default">
 	   					         <div class="panel-heading">
 	   					             <a href="#" class="MakaleYazariAdi">{{ $quote->author->name }}</a>
+	   					             <span>at {{$quote->created_at}}</span>
 	   					             <div class="btn-group" style="float:right;">
 	   					             	<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	   					             		<span class="glyphicon glyphicon-cog"></span>
@@ -41,7 +70,7 @@ Shohag's Blog
 	   					             	<ul class="dropdown-menu">
 	   					             		<li><a href="#"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a></li>
 	   					             		<li role="separator" class="divider"></li>
-	   					             		<li><a href="#"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Delete</a></li>
+	   					             		<li><a href="{{route('delete', ['quote_id'=>$quote->id] ) }}"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Delete</a></li>
 	   					             	</ul>
 	   					             </div>
 	   					             <div class="clearfix"></div>
@@ -53,6 +82,8 @@ Shohag's Blog
 	   					                 <h4 class="media-heading">{{$quote->title}}</h4>
 	   					                  
 	   					                 <div class="clearfix">{{$quote->quote}}</div>
+                                          
+
 	   					                 <div class="btn-group" role="group" id="BegeniButonlari">
 	   					                     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
 	   					                     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-down"></span></button>
@@ -75,29 +106,7 @@ Shohag's Blog
 	
 
 		   		   		<section class="add_blog">
-		   		   		 	
-		   		   		 		@if(count($errors)>0)
-			   		   		 		<div class="alert alert-danger" role="alert">
-
-			   		   		 			@foreach($errors->all() as $error)
-				   		   		 			<ul>
-				   		   		 				<li>
-				   		   		 					{{ $error }}
-				   		   		 				</li>												
-											</ul>
-			   		   		 			@endforeach
-
-			   		   		 		</div>
-		   		   		 		@endif
-
-								@if(Session::has('success'))
-			   		   		 		 
-			   		   		 			 {{ Session::get('success') }}
-				   		   		 			 
-			   		   		 		</div>
-		   		   		 		@endif
-
-		   		   		 	
+		   		   		  
 							<h3>Add Blog</h3>
 							<form action="{{route('create')}}" method="post">
 								<label for="name" class="label label-info">Your Name</label>

@@ -23,5 +23,11 @@ Route::group(['middleware'=>['web']], function(){
        'as' =>'create'
     ]);
 
+
+    Route::get('/delete/{quote_id}', [
+    'uses'=>'QuoteController@deleteBlog',
+    'as'=>'delete'	
+    ]);
+
 });
 
