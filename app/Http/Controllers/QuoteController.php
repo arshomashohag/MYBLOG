@@ -85,6 +85,20 @@ class QuoteController extends Controller{
 
       	return redirect()->route('home')->with(['success'=>'Blog deleted successfully !!']);
 	}
+
+
+    public function updateBlog(Request $request ){
+    	$quote = Quote::find($request['blog_id']);
+
+    	if(!$quote){
+            return redirect()->route('home')->with(['success'=>'Blog not found!!']);
+    	}
+    	$quote->quote=$request['udpost'];
+    	$quote->update();
+
+    	return redirect()->route('home')->with(['success'=>'Blog Updated!!']);
+    	
+    }
 }
 
 

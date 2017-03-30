@@ -59,7 +59,7 @@ Shohag's Blog
 	   				<div class="jumbotron">
 
 
-	   					<h3 class="latest_blog_label bg-success"> Latest Blog</h3>
+	   					<h3 class="latest_blog_label "> Latest Blog</h3>
 
 	   					  
 	   					  @foreach($quotes as $quote)
@@ -74,12 +74,47 @@ Shohag's Blog
 	   					             		<span class="sr-only">Toggle Dropdown</span>
 	   					             	</button>
 	   					             	<ul class="dropdown-menu">
-	   					             		<li><a href="#"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a></li>
+	   					             		<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#{{$quote->id}}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</button></li>
 	   					             		<li role="separator" class="divider"></li>
-	   					             		<li><a href="{{route('delete', ['quote_id'=>$quote->id] ) }}"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Delete</a></li>
+	   					             		<li><a class="delete_anchor" href="{{route('delete', ['quote_id'=>$quote->id] ) }}"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Delete</a></li>
 	   					             	</ul>
 	   					             </div>
+
+
+										<!-- Modal -->
+										  <div class="modal fade" id="{{$quote->id}}" role="dialog">
+										    <div class="modal-dialog">
+										    
+										      <!-- Modal content-->
+										      <div class="modal-content">
+										        <div class="modal-header">
+										         
+										          <button type="button" class="close" data-dismiss="modal">&times;</button>
+										          <h4 class="modal-title">Edit Blog</h4>
+										        </div>
+										        <div class="modal-body">
+										           <form method="post" action="{{route('update')}}">
+                                                     <input type="hidden" name="blog_id" value="{{$quote->id}}">
+										           	<textarea class="form-control" name="udpost" rows="5">
+										           		{{$quote->quote}} 
+										           	</textarea>
+										           	<button type="submit" class="btn btn-primary">Done</button>  
+										           	<input type="hidden" name="_token" value="{{ Session::token()}}">
+										           </form>
+										           
+										        </div>
+										        <div class="modal-footer"> 
+										          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										        </div>
+										      </div>
+										      
+										    </div>
+										  </div>
+
+
+
 	   					             <div class="clearfix"></div>
+
 	   					         </div>
 	   					         <div class="panel-body">
 	   					             <div class="media">

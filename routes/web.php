@@ -18,16 +18,22 @@ Route::group(['middleware'=>['web']], function(){
       'as'=>'home'
 	]);
 
-    Route::post('/newblog', [
-       'uses'=>'QuoteController@postQuote',
-       'as' =>'create'
-    ]);
-
 
     Route::get('/delete/{quote_id}', [
     'uses'=>'QuoteController@deleteBlog',
     'as'=>'delete'	
     ]);
 
+
+    Route::post('/newblog', [
+       'uses'=>'QuoteController@postQuote',
+       'as' =>'create'
+    ]);
+
+
+    Route::post('/update',[
+       'uses'=>'QuoteController@updateBlog',
+       'as'=>'update'
+    ]);
 });
 
