@@ -5,8 +5,14 @@
     font-size: 20px;
 
 }
- 
+ .alert{
+ 	text-align: center; 
+ 	 
+ }
 
+.alert ul{
+	list-style-type: none;
+}
 #BegeniButonlari{
     float:right;
     margin-top:15px;

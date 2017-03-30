@@ -15,7 +15,13 @@ Shohag's Blog
 
 
 @section('content')
-
+		@if(!empty(Request::segment(1)))
+		    <div class="container">
+		 		<div class="alert alert-info" role="alert">
+  					<span>A filter is set <a class="label label-info" href="{{route('home')}}">Show all blog</a> </span>
+		 		</div>
+		 	</div>
+		@endif
 
  	 
  		@if(count($errors)>0)
@@ -60,7 +66,7 @@ Shohag's Blog
 
 	   					     <div class="panel panel-default">
 	   					         <div class="panel-heading">
-	   					             <a href="#" class="MakaleYazariAdi">{{ $quote->author->name }}</a>
+	   					             <a href="{{route('home', ['author'=>$quote->author->name])}}" class="MakaleYazariAdi">{{ $quote->author->name }}</a>
 	   					             <span>at {{$quote->created_at}}</span>
 	   					             <div class="btn-group" style="float:right;">
 	   					             	<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
