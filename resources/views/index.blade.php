@@ -28,9 +28,11 @@ Shohag's Blog
 	   					<h3 class="latest_blog_label bg-success"> Latest Blog</h3>
 
 	   					  
+	   					  @foreach($quotes as $quote)
+
 	   					     <div class="panel panel-default">
 	   					         <div class="panel-heading">
-	   					             <a href="#" class="MakaleYazariAdi">John Doe</a>
+	   					             <a href="#" class="MakaleYazariAdi">{{ $quote->author->name }}</a>
 	   					             <div class="btn-group" style="float:right;">
 	   					             	<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	   					             		<span class="glyphicon glyphicon-cog"></span>
@@ -48,9 +50,9 @@ Shohag's Blog
 	   					             <div class="media">
 	   					                 
 	   					                 <div class="media-body">
-	   					                 <h4 class="media-heading">Lorem ipsum</h4>
-	   					                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nulla sapien, semper in sodales ac, rutrum at orci. Maecenas vulputate nec tellus sit amet porttitor. Suspendisse congue porta sagittis. Ut erat diam, consectetur sed tempus id, sodales nec felis. Donec sagittis nunc sapien, non consequat nunc ultrices non. Aliquam accumsan ligula ante, non commodo risus sodales a. Vestibulum facilisis, enim in porta fringilla, tortor sapien congue purus, porta consectetur sem turpis vitae mauris. Donec dapibus justo a elit semper, et scelerisque mauris ullamcorper. Maecenas blandit arcu nec euismod pellentesque. Fusce et imperdiet nisi, at suscipit sem. Aliquam pulvinar risus id cursus elementum. Nulla elementum placerat nibh, in dictum enim mollis non. Morbi vehicula eget est et tristique. Aenean condimentum augue id congue convallis. Phasellus congue non tellus nec pretium. Maecenas eu vulputate lacus, eget feugiat odio.
-	   					                 <div class="clearfix"></div>
+	   					                 <h4 class="media-heading">{{$quote->title}}</h4>
+	   					                  
+	   					                 <div class="clearfix">{{$quote->quote}}</div>
 	   					                 <div class="btn-group" role="group" id="BegeniButonlari">
 	   					                     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
 	   					                     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-down"></span></button>
@@ -59,7 +61,8 @@ Shohag's Blog
 	   					             </div>
 	   					         </div>
 	   					     </div>
-	   					 
+	   					 @endforeach
+
 	   				</div>
 	   			 
 
