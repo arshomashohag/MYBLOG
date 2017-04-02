@@ -135,9 +135,23 @@ Shohag's Blog
 	   					     </div>
 	   					 @endforeach
 
+ 						<div class="pagination">
+
+ 						<label class="label label-info"></label>
+ 							@if( $quotes->currentPage() !== 1)
+
+ 								<a href="{{ $quotes->previousPageUrl() }}"><span class="fa fa-caret-left fa-lg"></span></a>
+ 							@endif
+
+ 							@if(($quotes->currentPage() !== $quotes->lastPage()) && ($quotes->hasPages()) )
+								<a href="{{ $quotes->nextPageUrl() }}"><span class="fa fa-caret-right fa-lg"></span></a>
+								
+ 							@endif
+
+ 						</div>
 	   				</div>
 	   			 
-
+                
 	   		</div>
 
 	   		<div class="col-md-4">
