@@ -38,7 +38,7 @@ class QuoteController extends Controller{
 
         	'author'=>'required|max:120|alpha',
         	'title'=>'required|max:120',
-        	'blog'=>'required|max:1000'
+        	'blog'=>'required|max:10000'
         ]);
 
 		$author_text = ucfirst($request['author']);

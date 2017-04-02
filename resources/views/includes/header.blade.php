@@ -16,10 +16,10 @@
 	    
 	    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Home</a></li>
-	        <li ><a href="#">Blog</a></li>
-	        <li><a href="#">About</a></li>
-	        <li><a href="#">Contact</a></li>
+	        <li id="home"><a href="{{route('home')}}">Home</a></li>
+	        <li id="blog"><a href="{{route('blog')}}">Blog</a></li>
+	        <li id="about"><a href="#">About</a></li>
+	        <li id="contact"><a href="#">Contact</a></li>
 	      </ul>
 	       
 	    </div>

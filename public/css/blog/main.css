@@ -1,0 +1,13 @@
+
+
+a{
+  text-decoration:  none !important;
+  color: black;
+}
+
+.auname{
+	font-size: 15px;
+	font-weight: bold;
+	font-family: georgia ;
+	font-style: italic;
+}

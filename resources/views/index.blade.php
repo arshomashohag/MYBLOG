@@ -8,8 +8,7 @@ Shohag's Blog
 
 
 @section('styles')
-	<link rel="stylesheet" type="text/css" href="{{ URL::to('css/main.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{URL::to('css/footer-distributed.css')}}">
+	
 @endsection
 
 
@@ -122,13 +121,17 @@ Shohag's Blog
 	   					                 <div class="media-body">
 	   					                 <h4 class="media-heading">{{$quote->title}}</h4>
 	   					                  
-	   					                 <div class="clearfix">{{$quote->quote}}</div>
+	   					                 <div class="clearfix">{{ substr($quote->quote, 0, 1000)}}</div>
                                           
+                                         <div>
+                                         <a class="btn btn-default" href="{{route('blog', ['id'=>$quote->id])}}">Read More</a>
+		   					                 <div class="btn-group" role="group" id="BegeniButonlari">
 
-	   					                 <div class="btn-group" role="group" id="BegeniButonlari">
-	   					                     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-	   					                     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-	   					                 </div>                 
+		   					                     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+		   					                     <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+		   					                 </div>  
+	   					                 </div>
+
 	   					                </div>
 	   					             </div>
 	   					         </div>
@@ -137,7 +140,7 @@ Shohag's Blog
 
  						<div class="pagination">
 
- 						<label class="label label-info"></label>
+ 						<label class="label label-info">More</label>
  							@if( $quotes->currentPage() !== 1)
 
  								<a href="{{ $quotes->previousPageUrl() }}"><span class="fa fa-caret-left fa-lg"></span></a>
@@ -185,3 +188,6 @@ Shohag's Blog
 
 
 @endsection
+
+
+ 

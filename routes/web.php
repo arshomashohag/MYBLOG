@@ -25,6 +25,14 @@ Route::group(['middleware'=>['web']], function(){
     ]);
 
 
+
+    Route::get('/blog/blog/{id?}',[
+      'uses'=>'BlogController@getBlog',
+      'as'=>'blog'
+      ]);
+
+
+
     Route::post('/newblog', [
        'uses'=>'QuoteController@postQuote',
        'as' =>'create'
@@ -35,5 +43,8 @@ Route::group(['middleware'=>['web']], function(){
        'uses'=>'QuoteController@updateBlog',
        'as'=>'update'
     ]);
+
+
+
 });
 
