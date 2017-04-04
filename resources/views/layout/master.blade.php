@@ -16,6 +16,9 @@
 	<!-- Panel Style -->
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('css/main.css') }}"> 
 
+	<!-- Animate -->
+	<link rel="stylesheet" type="text/css" href="{{ URL::to('css/animate.css') }}">
+
 	 @yield('styles')
 
 	<!-- Latest compiled and minified JavaScript -->
@@ -24,6 +27,9 @@
 
     <!-- Font Awesome -->
 	<script src="https://use.fontawesome.com/b3e68927bc.js"></script>
+
+	<!-- Main  -->
+	<script type="text/javascript" src="{{ URL::to('js/main.js') }}"></script>
 
 	@yield('script')
 

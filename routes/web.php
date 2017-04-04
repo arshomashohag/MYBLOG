@@ -31,6 +31,12 @@ Route::group(['middleware'=>['web']], function(){
       'as'=>'blog'
       ]);
 
+    Route::get('/about/me', [
+      'uses'=>'AboutController@getMe',
+      'as'=>'about'
+
+    ]);
+
 
 
     Route::post('/newblog', [
