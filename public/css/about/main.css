@@ -106,7 +106,7 @@ html, body {
 	font-size: 30px;
 	text-align: center;
     -webkit-animation-duration: 3s;
-    -webkit-animation-delay: 2s;	
+    -webkit-animation-delay: 1.5s;	
 }
 
  .dot1, .dot2, .prog, .eng, .dev{
@@ -120,25 +120,25 @@ html, body {
 
 .prog{
 	
-    -webkit-animation-delay: 3s;
+    -webkit-animation-delay: 2s;
 }
 
 .dot1{
 	 
-    -webkit-animation-delay: 4s;
+    -webkit-animation-delay: 2.5s;
 }
 .eng{
 	 
-    -webkit-animation-delay: 5s;
+    -webkit-animation-delay: 3s;
 }
 
 .dot2{
 	 
-    -webkit-animation-delay: 6s;
+    -webkit-animation-delay: 3.5s;
 }
 
 .dev{
-	-webkit-animation-delay: 7s;
+	-webkit-animation-delay: 4s;
 }
 
  

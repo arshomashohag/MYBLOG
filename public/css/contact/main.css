@@ -37,12 +37,14 @@ form input:focus, form textarea:focus {
   -webkit-box-shadow: 0 0px 2px #e74c3c !important;
   box-shadow: 0 0px 2px #e74c3c !important;
 }
-form #input-submit {
+form #submit {
   color: white;
   background: #e74c3c;
   cursor: pointer;
+   -webkit-animation-duration: 3s;
+   -webkit-animation-delay: 3.5s;  
 }
-form #input-submit:hover {
+form #submit:hover {
   -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
   -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
   box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
@@ -83,4 +85,27 @@ form textarea {
 
 .cf:after {
   clear: both;
+}
+
+
+.hello{
+   -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 1s;  
+}
+
+.name{
+   -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 1.5s;  
+}
+.email{
+   -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 2s;  
+}
+.subject{
+   -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 2.5s;  
+}
+.message{
+   -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 3s;  
 }

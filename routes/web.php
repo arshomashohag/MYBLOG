@@ -55,6 +55,11 @@ Route::group(['middleware'=>['web']], function(){
        'as'=>'update'
     ]);
 
+    Route::post('/send/message', [
+      'uses'=> 'ContactController@sendMessage',
+      'as'=>'sendmessage'
+    ]);
+
 
 
 });
