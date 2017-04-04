@@ -49,7 +49,7 @@
 		
 	</div>
 
-	@include('includes.footer');
+	@include('includes.footer')
 
 </body>
 

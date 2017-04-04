@@ -37,6 +37,11 @@ Route::group(['middleware'=>['web']], function(){
 
     ]);
 
+    Route::get('/message/me',[
+        'uses' => 'ContactController@getMessage',
+        'as' =>'contact'
+    ]);
+
 
 
     Route::post('/newblog', [

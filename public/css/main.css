@@ -1,3 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather);
+
+html, body {
+  font-family: 'Merriweather', sans-serif;
+}
+
+
 .MakaleYazariAdi{
     line-height:34px;
     
