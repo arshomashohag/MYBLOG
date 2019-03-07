@@ -12,3 +12,4 @@ class Quote extends Model
     	return $this->belongsTo('App\Author');
     }
 }
+/// halka edit
